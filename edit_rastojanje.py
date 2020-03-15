@@ -1,3 +1,4 @@
+#Program nalazi najmanji broj karaktera cijom transformacijom se od niske A dobija niska B
 import numpy as np
 A=input()
 n=len(A)
