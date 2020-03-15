@@ -1,4 +1,5 @@
-#Program nalazi najmanji broj karaktera cijom transformacijom se od niske A dobija niska B
+#Program nalazi najmanji broj edit operacija kojim se od niske A dobija niska B
+# npr abbc i babb, program ce vratiti 2 jer mozemo dopisati *b*abbc i potom ukloniti poslednje c
 import numpy as np
 A=input()
 n=len(A)
