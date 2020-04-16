@@ -1,0 +1,15 @@
+ 10000
+    3512192	Shenyang, China
+    3222000	Pyongyang, North Korea
+    3200000	Lanzhou, China
+    3152825	Guangzhou, China
+    3144909	Casablanca, Morocco
+    3120282	Durban, South Africa
+    2695598	Chicago, Illinois, United States
+    2628000	Incheon, South Korea
+
+
+
+
+
+
