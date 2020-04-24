@@ -33,7 +33,7 @@ def weight_sort(lista):
     return lista
 
 def sort_first_r(lista,r):
-    lista.sort(key=lambda x:x[0][0:r])
+    lista.sort(key=lambda x:x[0][0:len(r)])
 
 def binarna_pretraga(uzorak,lista):
     l=0
@@ -84,21 +84,9 @@ br=int(n1)
 root=Tk()
 
 root.title("Autocomplete me")
-root.geometry("700x300")
-Label(root).grid(row=0,column=0)
-Label(root).grid(row=0,column=1)
-Label(root).grid(row=0,column=2)
-Label(root).grid(row=0,column=3)
-Label(root).grid(row=0,column=4)
-Label(root).grid(row=0,column=5)
-Label(root).grid(row=0,column=6)
-Label(root).grid(row=0,column=7)
-Label(root).grid(row=0,column=8)
-Label(root).grid(row=1,column=0)
-Label(root).grid(row=1,column=1)
-Label(root).grid(row=1,column=2)
-Label(root).grid(row=1,column=3)
-l1=Label(root,text="Search query:",bg="white",fg="black").grid(row=1,column=4)
+root.geometry("500x250")
+l1=Label(root,text="Search query:",bg="white",fg="black")
+l1.place(x=35,y=1)
 
 sv=StringVar()
 
@@ -121,21 +109,24 @@ def callback(sv,lista,br):
 
     i = 0
     l = Listbox(root, width=40)
-    l.grid(row=2, column=5)
+    l.place(x=120,y=20)
     weight_sort(bin_lista)
     if len(bin_lista) == 0 or len(a) == 0:
-        l.delete(0, END)
+            l.delete(0, END)
 
 
     else:
         for list in bin_lista:
             if i == br:
                 break
+
             if var1.get()==1:
-                l.insert(END,list[0]+" "+str(list[1]).rjust(50))
+
+                l.insert(END,list[0]+" "+str(list[1]))
             else:
                 l.insert(END,list[0])
             i += 1
+
 
     def CurSelet(evt):
         try:
@@ -151,16 +142,18 @@ def callback(sv,lista,br):
 
 
 
-    l.bind('<<ListboxSelect>>', CurSelet)
+        l.bind('<<ListboxSelect>>', CurSelet)
 
 
 
 te = Entry(root, textvariable=sv, width=40)
+te.place(x=120,y=1)
 
 def Klik():
     webbrowser.open("www.google.com/search?q=" + te.get())
 
-Button(root, text='Search Google', command=Klik).grid(row=1, column=8)
+b=Button(root, text='Search Google',height=1, command=Klik)
+b.place(x=370,y=1)
 
 
 
@@ -172,26 +165,10 @@ lexicographic_sort(lista)
 
 sv.trace("w", lambda name, index, mode, sv=sv: callback(sv,lista,br))
 
-te.grid(row=1,column=5)
-Label(root).grid(row=1,column=6)
-Label(root).grid(row=1,column=7)
 
-
-
-
-
-
-Label(root).grid(row=2,column=0)
-Label(root).grid(row=2,column=1)
-Label(root).grid(row=2,column=2)
 var1=IntVar()
-Checkbutton(root, text="Show weights", variable=var1).grid(row=6, column=3)
-Label(root).grid(row=7,column=3)
-Label(root).grid(row=8,column=3)
-Label(root).grid(row=9,column=3)
-Label(root).grid(row=10,column=3)
-Label(root).grid(row=11,column=3)
-
+c=Checkbutton(root, text="Show weights", variable=var1)
+c.place(x=5,y=20)
 
 
 
