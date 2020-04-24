@@ -142,7 +142,7 @@ def callback(sv,lista,br):
 
 
 
-        l.bind('<<ListboxSelect>>', CurSelet)
+    l.bind('<<ListboxSelect>>', CurSelet)
 
 
 
