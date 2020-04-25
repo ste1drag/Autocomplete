@@ -33,7 +33,7 @@ def weight_sort(lista):
     return lista
 
 def sort_first_r(lista,r):
-    lista.sort(key=lambda x:x[0][0:len(r)])
+    lista.sort(key=lambda x:x[0][0:r])
 
 def binarna_pretraga(uzorak,lista):
     l=0
